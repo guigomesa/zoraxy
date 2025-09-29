@@ -19,6 +19,6 @@ services:
     environment:
       FASTGEOIP: "true"
 
-networks
+networks:
       homelab:
         external: true
