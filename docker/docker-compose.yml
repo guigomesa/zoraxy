@@ -7,8 +7,8 @@ services:
       - 80:80
       - 443:443
       - 8000:8000
-    networks:
-      homelab
+    networks
+      homelab:
         external: true
     volumes:
       - /path/to/zoraxy/config/:/opt/zoraxy/config/
