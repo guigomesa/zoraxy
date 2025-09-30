@@ -34,13 +34,13 @@ services:
       - tailscale-state:/var/lib/tailscale
     environment:
       # defina no arquivo .env ao lado do compose
-      TS_AUTHKEY: "${TS_AUTHKEY}"
+      TS_AUTHKEY: "[[TS_AUTHKEY]]"
     command: >
       sh -c "
         tailscaled --state=/var/lib/tailscale/tailscaled.state &
         sleep 2 &&
         tailscale up
-          --authkey=${TS_AUTHKEY}
+          --authkey=[[TS_AUTHKEY]]
           --hostname=zoraxy-sidecar
           --accept-routes=true
           --accept-dns=false
