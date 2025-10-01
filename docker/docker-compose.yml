@@ -37,14 +37,12 @@ services:
     command: >
       sh -euxc '
         tailscaled --state=/var/lib/tailscale/tailscaled.state &
-        # espere o socket do daemon aparecer
-        # until [ -S /var/run/tailscale/tailscaled.sock ]; do sleep 0.5; done
         until tailscale version >/dev/null 2>&1; do sleep 0.5; done
         tailscale up \
           --authkey="${TS_AUTHKEY}" \
           --hostname=zoraxy-sidecar \
           --accept-routes=true \
-          --accept-dns=false
+          --accept-dns=true
         # mantém o PID 1 vivo
         wait -n
       '
