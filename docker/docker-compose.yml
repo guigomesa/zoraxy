@@ -42,7 +42,7 @@ services:
           --authkey="${TS_AUTHKEY}" \
           --hostname=zoraxy-sidecar \
           --accept-routes=true \
-          --accept-dns=true
+          --accept-dns=false
         # mantém o PID 1 vivo
         wait -n
       '
