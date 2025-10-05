@@ -16,6 +16,14 @@ services:
       - /etc/localtime:/etc/localtime
     extra_hosts:
       - "host.docker.internal:host-gateway"
+    deploy: 
+      resources: 
+        reservations: 
+          cpus: "0.50" 
+          memory: "1G"
+        limits:
+          cpus: "2.00"
+          memory: "2G"
     environment:
       FASTGEOIP: "true"
   tailscale:
